@@ -63,14 +63,14 @@ namespace Advertiment
             return table;
         }
 
-        public DataTable GetData1(string query)
+        public DataSet GetName(string query)
         {
+            OpenConnection ();
             command = new SqlCommand(query ,con);
-            OpenConnection();
             adapter = new SqlDataAdapter(command);
-            table = new DataTable();
-            adapter.Fill(table);
-            return table;
+            DataSet ds = new DataSet();
+            adapter.Fill(ds);
+            return ds;
         }
 
 

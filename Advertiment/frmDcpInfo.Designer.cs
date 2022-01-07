@@ -37,10 +37,8 @@
             this.btnMoreType = new System.Windows.Forms.Button();
             this.dtAdvStart = new System.Windows.Forms.DateTimePicker();
             this.txtDcpName = new System.Windows.Forms.TextBox();
-            this.txtDcpId = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.cbComName = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -55,6 +53,7 @@
             this.dcpId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dcpName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.screenStart = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.duration = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
@@ -68,6 +67,7 @@
             // 
             // cbStatus
             // 
+            this.cbStatus.BackColor = System.Drawing.SystemColors.Window;
             this.cbStatus.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbStatus.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbStatus.FormattingEnabled = true;
@@ -134,13 +134,18 @@
             this.btnMoreType.TabIndex = 13;
             this.btnMoreType.Text = "More";
             this.btnMoreType.UseVisualStyleBackColor = true;
+            this.btnMoreType.Click += new System.EventHandler(this.btnMoreType_Click);
             // 
             // dtAdvStart
             // 
+            this.dtAdvStart.CustomFormat = "yyyy-mm-dd";
             this.dtAdvStart.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtAdvStart.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtAdvStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtAdvStart.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.dtAdvStart.Location = new System.Drawing.Point(153, 3);
             this.dtAdvStart.Name = "dtAdvStart";
+            this.dtAdvStart.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dtAdvStart.Size = new System.Drawing.Size(266, 27);
             this.dtAdvStart.TabIndex = 12;
             // 
@@ -148,19 +153,10 @@
             // 
             this.txtDcpName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtDcpName.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDcpName.Location = new System.Drawing.Point(434, 3);
+            this.txtDcpName.Location = new System.Drawing.Point(153, 3);
             this.txtDcpName.Name = "txtDcpName";
-            this.txtDcpName.Size = new System.Drawing.Size(418, 27);
+            this.txtDcpName.Size = new System.Drawing.Size(699, 27);
             this.txtDcpName.TabIndex = 6;
-            // 
-            // txtDcpId
-            // 
-            this.txtDcpId.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtDcpId.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDcpId.Location = new System.Drawing.Point(153, 3);
-            this.txtDcpId.Name = "txtDcpId";
-            this.txtDcpId.Size = new System.Drawing.Size(175, 27);
-            this.txtDcpId.TabIndex = 5;
             // 
             // label5
             // 
@@ -179,24 +175,12 @@
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label2.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(334, 0);
+            this.label2.Location = new System.Drawing.Point(3, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 34);
+            this.label2.Size = new System.Drawing.Size(144, 34);
             this.label2.TabIndex = 1;
             this.label2.Text = "Dcp Name";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(144, 34);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Dcp Id";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // cbComName
             // 
@@ -260,6 +244,7 @@
             this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnSave
             // 
@@ -288,6 +273,7 @@
             this.btnEdit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEdit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // tableLayoutPanel3
             // 
@@ -308,15 +294,13 @@
             // 
             // tableLayoutPanel4
             // 
-            this.tableLayoutPanel4.ColumnCount = 4;
+            this.tableLayoutPanel4.ColumnCount = 2;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            this.tableLayoutPanel4.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.txtDcpId, 1, 0);
-            this.tableLayoutPanel4.Controls.Add(this.label2, 2, 0);
-            this.tableLayoutPanel4.Controls.Add(this.txtDcpName, 3, 0);
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel4.Controls.Add(this.label2, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.txtDcpName, 1, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 93);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
@@ -368,6 +352,7 @@
             this.dcpId,
             this.dcpName,
             this.screenStart,
+            this.duration,
             this.comId,
             this.status});
             this.dgDcp.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -375,6 +360,7 @@
             this.dgDcp.Name = "dgDcp";
             this.dgDcp.Size = new System.Drawing.Size(849, 341);
             this.dgDcp.TabIndex = 0;
+            this.dgDcp.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgDcp_CellContentClick);
             // 
             // dcpId
             // 
@@ -396,6 +382,12 @@
             this.screenStart.DataPropertyName = "screenStart";
             this.screenStart.HeaderText = "Date DCP Start";
             this.screenStart.Name = "screenStart";
+            // 
+            // duration
+            // 
+            this.duration.DataPropertyName = "duration";
+            this.duration.HeaderText = "Duration";
+            this.duration.Name = "duration";
             // 
             // comId
             // 
@@ -419,6 +411,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "frmDcpInfo";
             this.Text = "frmDcpInfo";
+            this.Activated += new System.EventHandler(this.frmDcpInfo_Activated);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
@@ -434,12 +427,9 @@
         }
 
         #endregion
-        private System.Windows.Forms.DateTimePicker dtAdvStart;
         private System.Windows.Forms.TextBox txtDcpName;
-        private System.Windows.Forms.TextBox txtDcpId;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtDuration;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -457,9 +447,11 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.DataGridView dgDcp;
+        private System.Windows.Forms.DateTimePicker dtAdvStart;
         private System.Windows.Forms.DataGridViewTextBoxColumn dcpId;
         private System.Windows.Forms.DataGridViewTextBoxColumn dcpName;
         private System.Windows.Forms.DataGridViewTextBoxColumn screenStart;
+        private System.Windows.Forms.DataGridViewTextBoxColumn duration;
         private System.Windows.Forms.DataGridViewTextBoxColumn comId;
         private System.Windows.Forms.DataGridViewTextBoxColumn status;
     }

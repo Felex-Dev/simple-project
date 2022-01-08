@@ -35,11 +35,9 @@
             this.dtAdvEnd = new System.Windows.Forms.DateTimePicker();
             this.dtAdvStart = new System.Windows.Forms.DateTimePicker();
             this.txtCompanyName = new System.Windows.Forms.TextBox();
-            this.txtCompanyId = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -47,9 +45,9 @@
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.label4 = new System.Windows.Forms.Label();
             this.btnMoreType = new System.Windows.Forms.Button();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.flpAdvertimentLocation = new System.Windows.Forms.FlowLayoutPanel();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -62,6 +60,8 @@
             // btnDelete
             // 
             this.btnDelete.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
             this.btnDelete.Location = new System.Drawing.Point(570, 3);
             this.btnDelete.Name = "btnDelete";
@@ -70,10 +70,13 @@
             this.btnDelete.Text = "Delete";
             this.btnDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnEdit
             // 
             this.btnEdit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnEdit.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
             this.btnEdit.Location = new System.Drawing.Point(670, 3);
             this.btnEdit.Name = "btnEdit";
@@ -82,11 +85,13 @@
             this.btnEdit.Text = "Edit";
             this.btnEdit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnSave
             // 
             this.btnSave.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSave.Location = new System.Drawing.Point(770, 3);
@@ -96,11 +101,15 @@
             this.btnSave.Text = "Save";
             this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // dtAdvEnd
             // 
+            this.dtAdvEnd.CustomFormat = "yyyy-MMM-dd";
             this.dtAdvEnd.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtAdvEnd.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.dtAdvEnd.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtAdvEnd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtAdvEnd.Location = new System.Drawing.Point(586, 3);
             this.dtAdvEnd.Name = "dtAdvEnd";
             this.dtAdvEnd.Size = new System.Drawing.Size(278, 27);
@@ -108,8 +117,11 @@
             // 
             // dtAdvStart
             // 
+            this.dtAdvStart.CustomFormat = "yyyy-MMM-dd";
             this.dtAdvStart.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtAdvStart.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.dtAdvStart.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtAdvStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtAdvStart.Location = new System.Drawing.Point(163, 3);
             this.dtAdvStart.Name = "dtAdvStart";
             this.dtAdvStart.Size = new System.Drawing.Size(277, 27);
@@ -119,19 +131,10 @@
             // 
             this.txtCompanyName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtCompanyName.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCompanyName.Location = new System.Drawing.Point(586, 3);
+            this.txtCompanyName.Location = new System.Drawing.Point(163, 3);
             this.txtCompanyName.Name = "txtCompanyName";
-            this.txtCompanyName.Size = new System.Drawing.Size(278, 27);
+            this.txtCompanyName.Size = new System.Drawing.Size(701, 27);
             this.txtCompanyName.TabIndex = 6;
-            // 
-            // txtCompanyId
-            // 
-            this.txtCompanyId.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtCompanyId.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCompanyId.Location = new System.Drawing.Point(163, 3);
-            this.txtCompanyId.Name = "txtCompanyId";
-            this.txtCompanyId.Size = new System.Drawing.Size(277, 27);
-            this.txtCompanyId.TabIndex = 5;
             // 
             // label5
             // 
@@ -162,24 +165,12 @@
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label2.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(446, 0);
+            this.label2.Location = new System.Drawing.Point(3, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(134, 34);
+            this.label2.Size = new System.Drawing.Size(154, 34);
             this.label2.TabIndex = 1;
             this.label2.Text = "Company Name";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(154, 34);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Company Id";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tableLayoutPanel1
             // 
@@ -222,15 +213,13 @@
             // 
             // tableLayoutPanel3
             // 
-            this.tableLayoutPanel3.ColumnCount = 4;
+            this.tableLayoutPanel3.ColumnCount = 2;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 160F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 140F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.txtCompanyId, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.label2, 2, 0);
-            this.tableLayoutPanel3.Controls.Add(this.txtCompanyName, 3, 0);
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.Controls.Add(this.label2, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.txtCompanyName, 1, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 53);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -266,7 +255,7 @@
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel5.Controls.Add(this.label4, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.btnMoreType, 2, 0);
-            this.tableLayoutPanel5.Controls.Add(this.checkedListBox1, 1, 0);
+            this.tableLayoutPanel5.Controls.Add(this.flpAdvertimentLocation, 1, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 133);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
@@ -297,14 +286,7 @@
             this.btnMoreType.TabIndex = 13;
             this.btnMoreType.Text = "More";
             this.btnMoreType.UseVisualStyleBackColor = true;
-            // 
-            // checkedListBox1
-            // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(163, 3);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(601, 79);
-            this.checkedListBox1.TabIndex = 14;
+            this.btnMoreType.Click += new System.EventHandler(this.btnMoreType_Click);
             // 
             // tableLayoutPanel6
             // 
@@ -330,6 +312,16 @@
             this.dataGridView1.Size = new System.Drawing.Size(861, 363);
             this.dataGridView1.TabIndex = 0;
             // 
+            // flpAdvertimentLocation
+            // 
+            this.flpAdvertimentLocation.AutoScroll = true;
+            this.flpAdvertimentLocation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.flpAdvertimentLocation.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flpAdvertimentLocation.Location = new System.Drawing.Point(163, 3);
+            this.flpAdvertimentLocation.Name = "flpAdvertimentLocation";
+            this.flpAdvertimentLocation.Size = new System.Drawing.Size(601, 88);
+            this.flpAdvertimentLocation.TabIndex = 14;
+            // 
             // frmCompanyInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -338,6 +330,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "frmCompanyInfo";
             this.Text = "frmCompanyInfo";
+            this.Load += new System.EventHandler(this.frmCompanyInfo_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
@@ -359,11 +352,9 @@
         private System.Windows.Forms.DateTimePicker dtAdvEnd;
         private System.Windows.Forms.DateTimePicker dtAdvStart;
         private System.Windows.Forms.TextBox txtCompanyName;
-        private System.Windows.Forms.TextBox txtCompanyId;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
@@ -373,6 +364,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnMoreType;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.FlowLayoutPanel flpAdvertimentLocation;
     }
 }

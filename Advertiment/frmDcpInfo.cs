@@ -60,7 +60,7 @@ namespace Advertiment
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            db.ExecuteQueries($"EditDcp '{id}','{txtDcpName.Text}','{dtAdvStart.Value.ToString("yyyy-MM-dd")}','{txtDuration.Text}','{cbComName.SelectedValue}','{cbStatus.Text}'");
+            db.ExecuteQueries($"EditDcp '{id}','{txtDcpName.Text}','{dtAdvStart.Value.ToString("yyyy-MMM-dd")}','{txtDuration.Text}','{cbComName.SelectedValue}','{cbStatus.Text}'");
             Clear();
         }
 

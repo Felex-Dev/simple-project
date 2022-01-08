@@ -16,7 +16,7 @@ namespace Advertiment
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmDcpInfo());
+            Application.Run(new frmCompanyInfo());
         }
     }
 }

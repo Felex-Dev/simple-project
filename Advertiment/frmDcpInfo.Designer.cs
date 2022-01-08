@@ -138,7 +138,7 @@
             // 
             // dtAdvStart
             // 
-            this.dtAdvStart.CustomFormat = "yyyy-mm-dd";
+            this.dtAdvStart.CustomFormat = "yyyy-MMM-dd";
             this.dtAdvStart.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtAdvStart.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtAdvStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
